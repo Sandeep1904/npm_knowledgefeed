@@ -1,0 +1,26 @@
+{
+  "name": "knowledgefeed",
+  "version": "1.0.0",
+  "description": "This is a repository dedicated to curating knowledge on any topic related to your domain. This package takes in a topic of your interest and creates a feed of posts with caption-sized facts derived from latest research papers and news articles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandeep1904/npm_knowledgefeed.git"
+  },
+  "keywords": [
+    "research"
+  ],
+  "author": "Sandeep Hugar <sandeephugar91@gmail.com> (https://purplekicks.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Sandeep1904/npm_knowledgefeed/issues"
+  },
+  "homepage": "https://github.com/Sandeep1904/npm_knowledgefeed#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^4.86.2"
+  }
+}
