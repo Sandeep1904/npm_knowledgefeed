@@ -1,0 +1,539 @@
+MAKEUSEOF
+
+Menu
+MUO logo [/public/build/images/muo-logo-full-colored-light.svg?v=3.0] /
+Sign in now
+Close
+ * * PC & Mobile Submenu
+     * Windows [/category/windows/]
+     * Android [/category/google-android/]
+     * iPhone [/category/ios/]
+   * Technical Submenu
+     * Tech Explained [/category/technology-explained/]
+     * Security [/category/security/]
+   * Lifestyle Submenu
+     * Productivity [/category/productivity/]
+     * Creative [/category/creative/]
+   * Entertainment [/category/entertainment/] Submenu
+     * Internet [/category/web-based/]
+   * News [/category/news/]
+   * Free Cheat Sheets [/tag/cheat-sheet/]
+
+ * Sign in
+ * Newsletter [/page/newsletter/]
+   
+   
+
+ * https://www.youtube.com/muotv
+ * https://www.facebook.com/muo.official
+ * https://www.instagram.com/makeuseof_official/
+ * https://twitter.com/MUO_official
+ * https://www.linkedin.com/company/muoofficial
+ * https://www.pinterest.com/muo_official/
+ * https://flipboard.com/@muo_official
+ * /feed/
+ * /page/newsletter/
+
+
+Windows 11 [/tag/windows-11/]
+
+ChatGPT [/tag/chatgpt/]
+
+iPhone Help [/tag/iphone-troubleshooting/]
+
+Facebook Help [/tag/facebook/]
+
+Avoiding Scams [/tag/scam/]
+
+Emojis Explained [/top-emojis-explained-cheat-sheet/]
+
+Free Movie Streaming [/free-movie-streaming-sites-no-sign-up/]
+
+
+Close
+
+
+
+I CAN'T AFFORD CHATGPT OPERATOR, SO I'M USING THIS FREE OPEN-SOURCE ALTERNATIVE INSTEAD
+
+Artificial Intelligence [/tag/artificial-intelligence/]
+4 [https://static1.makeuseofimages.com/wordpress%2Fwp-content%2Fauthors%2F66d8c784c4930-my%20pic.JPG?fit=crop&w=90&h=90]
+By  Ali Haider [/author/ali-haider/]
+Published 4 days ago
+Follow
+Followed
+Like
+Thread 2
+Link copied to clipboard
+Artificial Intelligence [/tag/artificial-intelligence/]
+
+
+RELATED
+
+autonomous ai agent robot sitting in call center.
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2025/02/autonomous-ai-agent-robot-sitting-in-call-center.jpg]
+/what-are-ai-agents-how-do-they-work/
+
+WHAT ARE AI AGENTS AND HOW DO THEY WORK? [/what-are-ai-agents-how-do-they-work/]
+
+
+
+
+generative ai chatbot apps on smartphone screen.
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2025/03/generative-ai-chatbot-apps-on-smartphone-screen.jpg]
+/how-find-best-ai-tools-for-any-job/
+
+HOW I FIND THE BEST AI TOOLS FOR ANY JOB [/how-find-best-ai-tools-for-any-job/]
+
+
+
+
+a phone with the amazon logo in a shopping cart with search bar icons
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/10/a-phone-with-the-amazon-logo-in-a-shopping-cart-with-search-bar-icons.jpg]
+/tech-products-avoid-amazon/
+
+I WON'T BUY THESE 7 TECH PRODUCTS ON AMAZON [/tech-products-avoid-amazon/]
+
+
+
+
+Sign in to your MUO account
+
+man looking at chatgpt on a smartphone and computer
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/10/man-looking-at-chatgpt-on-a-smartphone-and-computer.jpg]
+Alex Photo Stock / Shutterstock [https://www.shutterstock.com/image-photo/man-using-chatgpt-mobile-phone-laptop-2429174709]
+
+
+AI agents that can control a web browser and perform tasks, just like humans would, are no longer limited to concept. Tools like
+ChatGPT Operator are powerful but come at a price. Instead of paying up, I went looking for a free alternative—and I found one
+that works surprisingly well.
+
+
+BROWSER USE: THE BEST OPEN-SOURCE ALTERNATIVE I FOUND
+
+ChatGPT Operator can control a web browser [https://www.makeuseof.com/chatgpt-new-operator-ai-agent/] and perform actions such as
+clicking and scrolling all by itself. You just have to tell ChatGPT what needs to be done, such as booking tickets or writing text
+in Google Docs, and it will do so. But to gain access, one has to pay a hefty price tag—$200 per month as part of ChatGPT's Pro
+tier. I couldn't afford to purchase this subscription, and went out looking for an alternative and found about Browser Use.
+
+autonomous ai agent robot sitting in call center.
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2025/02/autonomous-ai-agent-robot-sitting-in-call-center.jpg]
+/what-are-ai-agents-how-do-they-work/ Related
+
+WHAT ARE AI AGENTS AND HOW DO THEY WORK? [/what-are-ai-agents-how-do-they-work/]
+
+AI Agents can help you solve complex problems, but how do they actually work?
+
+Posts /what-are-ai-agents-how-do-they-work/#threads
+
+
+
+Browser Use [https://browser-use.com/] is an open-source AI agent similar to ChatGPT Operator. It can interact with a web browser,
+navigate through websites, and perform actions. However, it costs only a fraction of ChatGPT's offering. Moreover, there are two
+options to choose from.
+
+The first option is to pay a $30 subscription, which runs the AI agent on their cloud service. The other option is to set it up
+yourself locally, and it costs the least (you will only be charged for API usage). I went with the most affordable option.
+
+Browser-use website opened showing different pricing plans
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2025/02/screenshot-from-2025-02-19-00-53-16.png] Browser-use
+[https://browser-use.com/]
+
+Setting up Browser Use isn’t as straightforward as ChatGPT Operator, but with a few lines of code, I had it up and running. If I
+could do it, you can too!
+
+
+
+
+HOW I SET UP BROWSER USE ON MY PC
+
+To get started, you’ll need two things: Python 3.11 installed on your computer and API access from OpenAI (or a locally hosted LLM
+if you prefer).
+
+Since Browser Use is an AI agent, it requires a large language model (LLM)
+[https://www.makeuseof.com/what-are-large-langauge-models-how-do-they-work/] to function. For that, you can get API access from
+OpenAI's website or any other API that works with Browser Use. The benefit of using an API is that you get the flexibility to
+choose between different models (such as GPT-3.5 and GPT-4), and you only have to pay for what you use—instead of an upfront
+subscription fee.
+
+In my testing, I used the ChatGPT 4-o model. I was charged less than $1 for all seven tasks I asked Browser Use to perform.
+However, if you pair it with DeepSeek API, it will be several times cheaper.
+
+You could also use a local LLM on your computer. However, running a local LLM comparable to ChatGPT 4-o requires significant
+computing power, which most people likely won't have. I did test out DeepSeek's 7B LLM model on my computer
+[https://www.makeuseof.com/how-run-install-deepseek-ai-laptop/], and the performance was unsurprisingly bad. So, I would recommend
+sticking with an API for now.
+
+Once you obtain API access, you can create a virtual environment in VS Code by going to view > Command Palette and typing create
+environment. Then, open a new terminal and install Browser-use using pip.
+
+
+        pip install browser-use
+    
+
+Create a .env file inside the folder and add your API key.
+
+
+        OPENAI_API_KEY="Your API Here"
+    
+
+Create a new Python file with the name app.py and paste the following code.
+
+
+        pip install browser-use
+OPENAI_API_KEY="Your API Here"
+from langchain_openai import ChatOpenAI
+
+from browser_use import Agent
+
+import asyncio
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+
+async def main():
+
+    agent = Agent(
+
+        task="Go to Reddit, search for 'browser-use', click on the first post and return the first comment.",
+
+        llm=ChatOpenAI(model="gpt-4o"),
+
+    )
+
+    result = await agent.run()
+
+    print(result)
+
+
+
+asyncio.run(main())
+
+
+    
+
+Close
+
+
+Replace the prompt with your own, like "Search for Albert Einstein and open his Wikipedia page." Finally, Run the app.py python
+file using the terminal.
+
+
+        python app.py
+    
+
+
+
+
+PUTTING IT TO THE TEST: DOES IT LIVE UP TO EXPECTATIONS?
+
+I started my testing with simple tasks, such as Googling "Albert Einstein" and opening his Wikipedia page. When I ran the script,
+the AI agent opened a new browser window and executed the task flawlessly.
+
+Next, I asked it to search for gaming laptops on Amazon and open the first result. Again, the AI agent completed the task
+successfully.
+
+Close
+
+
+At this point, I was convinced that Browser Use could intelligently navigate the web. To push it further, I instructed it to visit
+Yahoo News and summarize the top five articles. To my surprise, Browser Use could complete the task within a few minutes. The
+summaries were short and to the point. You can see the results below.
+
+Close
+
+
+However, things became tricky for Browser Use when I asked it to search for flights from London to Paris on skyscanner.com.
+Initially, the website blocked access due to bot detection, so I had to intervene and bypass the bot detection. Still, Browser Use
+struggled—it clicked the search button without correctly entering "London" and "Paris" into the respective fields.
+
+You can pair Browser Use with your main browser, where all your accounts are logged in. This allows the AI agent to enter data
+into a Google Sheet or paste Yahoo News summaries into a Google Doc. However, I ran into issues setting it up with my active
+browser, so I put it on hold for now.
+
+Overall, it was a fun experiment. Watching an AI agent navigate the web and perform tasks was fascinating. While Browser Use is
+not perfect, it's far from a solid AI agent that can browse the web.
+
+Still, this technology is in its infancy, so we can expect improvements in the future.
+
+For now, if you’re willing to tinker with the setup and don’t mind occasional hiccups, boot up your computer and install Browser
+Use. Feel free to mention it in the threads if you get stuck and need a helping hand.
+
+
+ * Technology Explained
+   [/category/technology-explained/]
+ * Artificial Intelligence
+   [/tag/artificial-intelligence/]
+ * ChatGPT
+   [/tag/chatgpt/]
+
+Follow
+Followed
+Like
+https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F%2F&src=sdkpreparse
+https://twitter.com/intent/tweet?text=I%20Can%27t%20Afford%20ChatGPT%20Operator%2C%20So%20I%27m%20Using%20This%20Free%20Open-Source%20Alternative%20Instead&url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F
+https://web.whatsapp.com/send?text=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F
+https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F&title=I%20Can%27t%20Afford%20ChatGPT%20Operator%2C%20So%20I%27m%20Using%20This%20Free%20Open-Source%20Alternative%20Instead&source=www.makeuseof.com&summary=Free%2C%20open-source%2C%20and%20surprisingly%20good.
+https://bsky.app/intent/compose?text=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F
+https://www.reddit.com/submit?url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F
+http://share.flipboard.com/bookmarklet/popout?v=2&title=I%20Can%27t%20Afford%20ChatGPT%20Operator%2C%20So%20I%27m%20Using%20This%20Free%20Open-Source%20Alternative%20Instead&url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F&utm_campaign=tools&utm_medium=article-share&utm_source=www.makeuseof.com
+javascript:;
+?Subject=I Can't Afford ChatGPT Operator, So I'm Using This Free Open-Source Alternative
+Instead&Body=Check%20this%20out%21%0Ahttps%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F
+Share
+Facebook
+[https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F%2F&src=sdkpreparse]
+X
+[https://twitter.com/intent/tweet?text=I%20Can%27t%20Afford%20ChatGPT%20Operator%2C%20So%20I%27m%20Using%20This%20Free%20Open-Source%20Alternative%20Instead&url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F]
+LinkedIn
+[https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F&title=I%20Can%27t%20Afford%20ChatGPT%20Operator%2C%20So%20I%27m%20Using%20This%20Free%20Open-Source%20Alternative%20Instead&source=www.makeuseof.com&summary=Free%2C%20open-source%2C%20and%20surprisingly%20good.]
+Reddit [https://www.reddit.com/submit?url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F] Flipboard
+[http://share.flipboard.com/bookmarklet/popout?v=2&title=I%20Can%27t%20Afford%20ChatGPT%20Operator%2C%20So%20I%27m%20Using%20This%20Free%20Open-Source%20Alternative%20Instead&url=https%3A%2F%2Fwww.makeuseof.com%2Ffree-chatgpt-operator-alternative%2F&utm_campaign=tools&utm_medium=article-share&utm_source=www.makeuseof.com]
+Copy link [javascript:;] Email [?Subject=I Can't Afford ChatGPT Operator, So I'm Using This Free Open-Source Alternative
+Instead&Body=Check%20this%20out%21%0Ahttps://www.makeuseof.com/free-chatgpt-operator-alternative/]
+Readers like you help support MakeUseOf. When you make a purchase using links on our site, we may earn an affiliate commission.
+Read More [https://www.valnetinc.com/en/terms-of-use].
+Close
+
+
+Thread 2
+Sign in to your MUO account
+
+
+We want to hear from you! Share your opinions in the thread below and remember to keep it respectful.
+
+Reply / Post
+Images
+
+Attachment(s)
+
+Please respect our community guidelines [https://www.valnetinc.com/en/terms-of-use#community-guidelines]. No links, inappropriate
+language, or spam.
+
+
+Your comment has not been saved
+
+Send confirmation email [javascript:void(0)]
+
+
+
+
+Sort by: Popular Oldest Newest
+ * eljondy User Display Picture
+   [https://static1.makeuseofimages.com/wordpress/wordpress/wp-content/uploads/profilepics/circle-user-solid-1.png]
+   /profile/KF462945/
+   eljondy [/profile/KF462945/]
+   User Display Picture
+   [https://static1.makeuseofimages.com/wordpress/wordpress/wp-content/uploads/profilepics/circle-user-solid-1.png]
+   /profile/KF462945/
+   eljondy [/profile/KF462945/]
+   #KF462945 Member since 2025-03-07
+   Follow Me
+   Followed
+   0 Followers
+   Following
+   0
+   Authors
+   0
+   Articles
+   0
+   Topics
+   1
+   Posts
+   
+   This is kinda what Rabbit promised with R1 but did not deliver
+   
+   2025-03-07 21:12:09
+   
+   Upvote
+   
+   Downvote
+   Reply
+   
+   Copy
+ * Chris User Display Picture
+   [https://static1.srcdn.com/wordpress/wordpress/wp-content/uploads/profilepics/circle-user-solid-2.png] /profile/DI615473/
+   Chris [/profile/DI615473/]
+   User Display Picture [https://static1.srcdn.com/wordpress/wordpress/wp-content/uploads/profilepics/circle-user-solid-2.png]
+   /profile/DI615473/
+   Chris [/profile/DI615473/]
+   #DI615473 Member since 2023-07-17
+   Follow Me
+   Followed
+   0 Followers
+   Following
+   0
+   Authors
+   0
+   Articles
+   0
+   Topics
+   10
+   Posts
+   
+   All I can say is, "Why?"
+   
+   
+   
+   
+   If it's just for tinkering and as a hobby, fine. Otherwise, no chance.
+   
+   2025-03-07 10:14:30
+   
+   Upvote
+   
+   Downvote
+   Reply
+   
+   Copy
+
+ * Terms [https://www.valnetinc.com/en/terms-of-use]
+ * Privacy [https://www.valnetinc.com/en/privacy-policy]
+ * Feedback [/contact]
+
+
+Recommended
+An inflatable solar-powered Luci light.
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/wm/2025/02/1000065529.jpg]
+/why-i-love-solar-powered-lights/
+
+PORTABLE SOLAR-POWERED LIGHTS ARE THE HOME UPGRADE I DIDN'T REALIZE I WANTED [/why-i-love-solar-powered-lights/]
+
+LED Lights [/tag/led-lights/]
+
+Light-producing gadgets that are powered by light!
+
+Posts 1 [/why-i-love-solar-powered-lights/#threads]
+
+20 hours ago
+chromebook with chrome os logo
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/09/chromebook-with-chrome-os-logo.jpg]
+/why-use-chromebook-as-travel-laptop/
+
+WHY I USE A CHROMEBOOK AS MY TRAVEL LAPTOP—AND HOW IT HOLDS UP [/why-use-chromebook-as-travel-laptop/]
+
+Chromebook [/tag/chromebook/]
+
+My Chromebook is often the perfect companion for my travels—but that's not always the case.
+
+Posts 1 [/why-use-chromebook-as-travel-laptop/#threads]
+
+2 days ago
+A MacBook Air and a Dell XPS 13 next to each other
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/wm/2024/12/macbook-air-vs-dell-xps-13.png]
+/tag/operating-system-choose-next-pc/
+
+WHICH OPERATING SYSTEM SHOULD YOU CHOOSE FOR YOUR NEXT PC? [/tag/operating-system-choose-next-pc/]
+
+Operating Systems [/tag/operating-systems/]
+
+Which is the best operating system for your computer? Here's what to consider.
+
+Posts 15 [/tag/operating-system-choose-next-pc/#threads]
+
+Jan 7, 2025
+Orion Frost Keychron K8 Pro and Keychron K2 V2 next to each other
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/wm/2025/02/cheap-vs-expensive-mechanical-keyboard-featured.JPG]
+/overspending-on-mechanical-keyboards/
+
+I MASSIVELY OVERSPENT ON A MECHANICAL KEYBOARD—DON'T DO WHAT I DID [/overspending-on-mechanical-keyboards/]
+
+Mechanical Keyboard [/tag/mechanical-keyboard/]
+
+I fell down the mechanical keyboard rabbit hole. Hard.
+
+Posts /overspending-on-mechanical-keyboards/#threads
+
+11 hours ago
+google maps logos with red crosses through
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/11/google-maps-logos-with-red-crosses-through.jpg]
+/best-google-maps-alternatives/
+
+THESE ARE THE 6 BEST GOOGLE MAPS ALTERNATIVES [/best-google-maps-alternatives/]
+
+Google Maps [/tag/google-maps/]
+
+Done with Google Maps? These are the best alternative map apps you should try instead.
+
+Posts 17 [/best-google-maps-alternatives/#threads]
+
+Nov 19, 2024
+A man holding a Samsung 990 Pro SSD
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/08/a-man-holding-a-samsung-990-pro-ssd.jpg]
+/drive-partitions-pointless-modern-storage/
+
+DRIVE PARTITIONS ARE POINTLESS ON MODERN STORAGE: HERE'S WHY [/drive-partitions-pointless-modern-storage/]
+
+Disk Partition [/tag/drive-partitions/]
+
+Thinking about partitioning your drive? You might want to reconsider.
+
+Posts 15 [/drive-partitions-pointless-modern-storage/#threads]
+
+Feb 24, 2025
+
+
+ * TECHNOLOGY EXPLAINED
+
+
+ * PC & MOBILE
+
+Person holding the Google Pixel 8a showing the apps menu
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/wm/2024/07/person-holding-the-google-pixel-8a-showing-the-apps-menu.jpg]
+/google-apps-better-than-samsung/
+
+5 SAMSUNG APPS I IGNORE BECAUSE GOOGLE’S ALTERNATIVES ARE SIMPLY BETTER [/google-apps-better-than-samsung/]
+
+
+
+12 hours ago
+A person using split-screen view on their Galaxy phone
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/09/a-person-using-split-screen-view-on-their-galaxy-phone.jpg]
+/use-this-samsung-feature-every-day/
+
+I FOUND THIS SAMSUNG FEATURE ACCIDENTALLY AND NOW I USE IT EVERY DAY [/use-this-samsung-feature-every-day/]
+
+
+
+14 hours ago
+A person holding an iPhone with a loading icon and a turtle next to it, with some warning signs around.
+[https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/09/a-person-holding-an-iphone-with-a-loading-icon-and-a-turtle-next-to-it-with-some-warning-signs-around.jpg]
+/determine-cellular-data-throttled/
+
+HOW TO DETERMINE IF YOUR CELLULAR DATA IS BEING THROTTLED [/determine-cellular-data-throttled/]
+
+
+
+19 hours ago
+See More [/category/technology-explained/]
+
+See More [/category/pc-mobile/]
+MUO logo [/public/build/images/muo-logo-symbol-white.svg?v=2.4] /
+ * Join Our Team [/work-with-us/]
+ * Our Audience [/page/advertise/]
+ * About Us [/page/about/]
+ * Press & Events [/page/press-events/]
+ * Contact Us [/contact/]
+
+ * Follow Us
+ * https://www.youtube.com/muotv
+ * https://www.facebook.com/muo.official
+ * https://www.instagram.com/makeuseof_official/
+ * https://twitter.com/MUO_official
+ * https://www.linkedin.com/company/muoofficial
+ * https://www.pinterest.com/muo_official/
+
+
+Valnet Logo [/public/build/images/valnet-logo-icon-white.svg?v=2.4] https://www.valnetinc.com/en/
+ * Advertising [https://www.valnetinc.com/en/advertising]
+ * Careers [https://www.valnetinc.com/en/careers]
+ * Terms [https://www.valnetinc.com/en/terms-of-use]
+ * Privacy [https://www.valnetinc.com/en/privacy-policy]
+ * Policies [https://www.valnetinc.com/en/editorial-integrity]
+
+MUO [/] is part of the Valnet Publishing Group [https://www.valnetinc.com/en/]
+
+Copyright © 2025 Valnet Inc.
