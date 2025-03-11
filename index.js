@@ -6,6 +6,7 @@ const pdf_parse = require("pdf-parse");
 const { convert } = require("html-to-text");
 const DDG = require('duck-duck-scrape');
 const xml2js = require('xml2js');
+const { send } = require('process');
 
 
 const client = new OpenAI( {
@@ -124,7 +125,7 @@ class Fetcher {
                     });
                 });
             });
-            for (let source in sources) {
+            for (let source of sources) {
                 md_str = this.convertInput(source, "pdf");
                 allContent.push({'pdflink': source, 'md_str': md_str, 'resources': resources})
             }
@@ -136,7 +137,7 @@ class Fetcher {
                 let source = object.url;
                 sources.push(source);
             }
-            for (let source in sources) {
+            for (let source of sources) {
                 md_str = this.convertInput(source, "html");
                 allContent.push({'abslink': source, 'md_str': md_str, 'resources': resources});
             }
@@ -150,12 +151,116 @@ class Fetcher {
 
 class ObjectBuilder {
     constructor() {
-
+        this.model= 'llama-3.3-70b';
+        this.source = 'ddgs';
+        this.personality = "assistant";
+        this.temperature = 0.7;
     }
 
-    build_object(abslink, pdflink, md_str, model, source, temp, personality, resources) {
-
+    breakMarkdown(md_str, maxLength) {
+        // Initialize an empty array to hold the chunks
+        const chunks = [];
+        // Start from the beginning of the string
+        let start = 0;
+        const percentage = 0.3;
+    
+        // Loop until the end of the string
+        while (start < md_str.length) {
+            // Get the end index for the current chunk
+            let end = start + maxLength;
+    
+            // If the end index exceeds the string length, adjust it
+            if (end > md_str.length) {
+                end = md_str.length;
+            }
+    
+            // Append the chunk to the array
+            chunks.push(md_str.slice(start, end));
+    
+            // Move the start index to the end of the current chunk
+            start = end;
+        }
+    
+        const remove = Math.floor(chunks.length * percentage);
+        if (chunks.length - remove > 2) {
+            const startIndex = remove;
+            const endIndex = chunks.length - remove;
+            return chunks.slice(startIndex, endIndex);
+        }
+        return chunks;
     }
+
+    buildPosts(md_str, resources, objectID) {
+        const ob = new ObjectBuilder();
+        const chunks = ob.breakMarkdown(md_str, 4000);
+        const llmHandler = new llmHandler();
+        const posts = Posts();
+        let results = "";
+
+        for (let chunk of chunks) {
+            prompt = `You are a deligent research assistant and you have 3 tasks.
+            1. Clean the markdown string given below about a academic or business
+            topic by removing all unnecessary sections that don't cotribute any 
+            insights about the main topic. Must not produce output yet.
+            2. Then analyze the cleaned content and create as many caption-sized highlights
+            as possible. Must not produce output yet.
+            3. Finally, your response should only and only contain a list of strings,
+            that are the highlights you created in the previous step.
+            ${chunk}`
+
+            const chunkResults = llmHandler.callLLM(prompt, this.model, this.source, 
+                this.personality, this.temperature)
+            results = results + chunkResults + "\n";
+
+        }
+        md_str = results;
+        
+        try {
+            let sentences = results.split("\n");
+            sentences.forEach(sentence => {
+                const post = new Post(sentence, md_str, resources, objectID);
+                posts.addPost(post.getPost());
+            })
+        } catch (error) {
+            console.log(`Error Building Posts ${error}`)
+        }
+
+        console.log("Returning Posts")
+        return posts
+    }
+
+    buildObject(abslink, pdflink, md_str, model, source, temp, personality, resources) {
+        const feedObject = new Feed(abslink, pdflink, md_str);
+        
+        // Create a new Agent object
+        const agent = new Agent(model, source, temp, personality);
+        
+        // Add the agent to the feed object
+        feedObject.addAgent(agent.getAgent());
+        
+        // Build posts and add them to the feed object
+        const posts = this.buildPosts(md_str, resources, feedObject.id);
+        feedObject.addPosts(posts.getPosts());
+        
+        console.log('Object built successfully!');
+        return feedObject.getFeed();
+    }
+}
+
+class Feed {
+
+}
+
+class Agent {
+
+}
+
+class Post {
+
+}
+
+class Posts {
+
 }
 
 
@@ -195,6 +300,9 @@ class FeedBuilder {
     }
 }
 
+class llmHandler {
+    
+}
 
 
 async function main() {
