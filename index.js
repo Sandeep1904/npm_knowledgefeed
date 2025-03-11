@@ -151,8 +151,8 @@ class Fetcher {
 
 class ObjectBuilder {
     constructor() {
-        this.model= 'llama-3.3-70b';
-        this.source = 'ddgs';
+        this.model= 'llama-3.3-70b-versatile';
+        this.source = 'groq';
         this.personality = "assistant";
         this.temperature = 0.7;
     }
@@ -198,7 +198,7 @@ class ObjectBuilder {
         let results = "";
 
         for (let chunk of chunks) {
-            prompt = `You are a deligent research assistant and you have 3 tasks.
+            const prompt = `You are a deligent research assistant and you have 3 tasks.
             1. Clean the markdown string given below about a academic or business
             topic by removing all unnecessary sections that don't cotribute any 
             insights about the main topic. Must not produce output yet.
@@ -248,19 +248,103 @@ class ObjectBuilder {
 }
 
 class Feed {
+    static id = -1;
+
+    constructor(abslink, pdflink, md_str) {
+        this.abslink = abslink
+        this.pdflink = pdflink
+        this.md_str = md_str
+        Feed.id += 1
+        this.id = Feed.id
+        this.items = {
+            'objectID': this.id,
+            'abslink': this.abslink,
+            'pdflink': this.pdflink,
+            'md_str': this.md_str,
+        }
+    }
+
+    addAgent(agent) {
+        this.items.agent = agent;
+        console.log("Agent Added Successfully!");
+    }
+
+    addPosts(posts) {
+        this.items.posts = posts;
+        console.log("Posts Added Successfully!");
+    }
+
+    getFeed() {
+        return this.items
+    }
 
 }
 
 class Agent {
+    constructor(model, source, temp, personality) {
+        this.model = model;
+        this.source = source;
+        this.temp = temp;
+        this.personality = personality;
 
+        this.agent = [
+            {
+                'model': self.model,
+                'source': self.source,
+                'temp': self.temp,
+                'personality': self.personality,
+            }
+        ];
+    }
+
+    getAgent() {
+        return this.agent;
+    }
 }
 
 class Post {
+    static id = -1;
+    static oldObjectID = 0;
 
+    constructor(text, chatContext, resources, objectID) {
+        this.text = text;
+        this.chatContext = chatContext;
+        this.resources = resources;
+        this.newObjectID = objectID;
+
+        if (Post.oldObjectID !== this.newObjectID) {
+            Post.oldObjectID = this.newObjectID;
+            Post.id = -1;
+        }
+        Post.id += 1;
+        this.id = Post.id;
+
+        this.post = {
+            postID: this.id,
+            text: this.text,
+            chatContext: this.chatContext,
+            resources: this.resources,
+        };
+    }
+
+    getPost() {
+        return this.post;
+    }
 }
 
 class Posts {
+    constructor() {
+        this.posts = [];
+    }
 
+    addPost(post) {
+        this.posts.push(post);
+        console.log("Post added successfull!");
+    }
+
+    getPosts() {
+        return this.posts;
+    }
 }
 
 
@@ -277,12 +361,12 @@ class FeedBuilder {
             const pdflink = content.pdflink || null;
             const md_str = content.md_str || null;
             const resources = content.resources || null;
-            const model = "llama-3.3-70b";
-            const source = "ddgs";
+            const model = "llama-3.3-70b-versatile";
+            const source = "groq";
             const temperature = 0.7;
-            const personality = "friendly";
+            const personality = "assistant";
             const ob = new ObjectBuilder();
-            let objectResponse = ob.build_object(abslink, pdflink, md_str, model, source, temp, personality, resources);
+            let objectResponse = ob.buildObject(abslink, pdflink, md_str, model, source, temp, personality, resources);
             feed.push(objectResponse)
             console.log("Sent OBJECT to frontend!")
             yield objectResponse
@@ -301,6 +385,66 @@ class FeedBuilder {
 }
 
 class llmHandler {
+    constructor() {
+
+    }
+
+    callLLM(prompt, model, source, personality, temp) {
+        let results = "";
+        source.toLowerCase();
+        if (source == "groq") {
+            try {
+                results = groqClient.chat.completions.create(
+                    {
+                        model:model,
+                    temperature:temp,
+    
+                    messages:[
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+    
+                    }
+                );
+                results = String(results.choices[0].message.content);
+            } catch (error) {
+                console.log(`Groq Output Error ${error}`);
+                this.model = "gpt-4o-min";
+                this.source = "openai";
+            }
+            
+        }
+
+        if (source == "openai") {
+            try {
+                results = client.chat.completions.create(
+                    {
+                        model:model,
+                    temperature:temp,
+    
+                    messages:[
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+    
+                    }
+                );
+                results = String(results.choices[0].message.content);
+            } catch (error) {
+                console.log(`OpenAI Output Error ${error}`);
+
+            }
+        }
+        console.log("Returning LLM Output");
+        return results;
+    }
+}
+
+class FeedModifier {
     
 }
 
