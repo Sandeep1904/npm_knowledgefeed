@@ -1,0 +1,150 @@
+[
+    {
+        "objectID": 0,
+        "abslink": "https://example.com/article1",
+        "pdflink": "https://example.com/report1.pdf",
+        "md_str": "Markdown content for post 1",
+        "agent": [
+            {
+                "model": "GPT-4",
+                "source": "OpenAI",
+                "personality": "Professional",
+                "temperature": 0.5
+            }
+        ],
+        "posts": [
+            {
+                "postID": 0,
+                "text": "🚀 AI is revolutionizing industries. Read more!",
+                "chatContext": "https://chatbot.example.com/ai_discussion",
+                "resources": [
+                    {
+                        "images": [
+                            {
+                                "title": "AI Revolution",
+                                "image": "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                            },
+                            {
+                                "title": "Machine Learning",
+                                "image": "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                            }
+                        ],
+                        "videos": [
+                            {
+                                "title": "What is AI?",
+                                "video": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            }
+                        ],
+                        "newsArticles": [
+                            {
+                                "title": "The Future of AI",
+                                "url": "https://news.example.com/future-ai"
+                            },
+                            {
+                                "title": "How AI is Changing Work",
+                                "url": "https://news.example.com/ai-work"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "postID": 1,
+                "text": "💡 The impact of AI on education is immense. Learn how it’s shaping learning methods!",
+                "chatContext": "https://chatbot.example.com/edu_ai",
+                "resources": [
+                    {
+                        "images": [
+                            {
+                                "title": "AI in Education",
+                                "image": "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                            }
+                        ],
+                        "videos": [
+                            {
+                                "title": "AI in Classrooms",
+                                "video": "https://www.youtube.com/embed/8z4D9XeTpfM"
+                            }
+                        ],
+                        "newsArticles": [
+                            {
+                                "title": "AI Tutors Are Here",
+                                "url": "https://news.example.com/ai-tutors"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "objectID": 1,
+        "abslink": "https://example.com/article2",
+        "pdflink": "https://example.com/report2.pdf",
+        "md_str": "Markdown content for post 2",
+        "agent": [
+            {
+                "model": "Mistral",
+                "source": "Hugging Face",
+                "personality": "Casual",
+                "temperature": 0.8
+            }
+        ],
+        "posts": [
+            {
+                "postID": 0,
+                "text": "🌎 Climate change solutions using AI. Read the latest breakthroughs.",
+                "chatContext": "https://chatbot.example.com/climate_ai",
+                "resources": [
+                    {
+                        "images": [
+                            {
+                                "title": "AI and Climate",
+                                "image": "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                            }
+                        ],
+                        "videos": [
+                            {
+                                "title": "AI for Sustainability",
+                                "video": "https://www.youtube.com/embed/YzL0gJDrhdI"
+                            }
+                        ],
+                        "newsArticles": [
+                            {
+                                "title": "AI Fights Climate Change",
+                                "url": "https://news.example.com/ai-climate"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "postID": 1,
+                "text": "🏥 AI is transforming healthcare. Learn how AI is assisting doctors in diagnostics!",
+                "chatContext": "https://chatbot.example.com/health_ai",
+                "resources": [
+                    {
+                        "images": [
+                            {
+                                "title": "AI in Healthcare",
+                                "image": "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                            }
+                        ],
+                        "videos": [
+                            {
+                                "title": "AI for Medical Diagnosis",
+                                "video": "https://www.youtube.com/embed/XI5frPV58tY"
+                            }
+                        ],
+                        "newsArticles": [
+                            {
+                                "title": "AI and Medical Research",
+                                "url": "https://news.example.com/ai-medical"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

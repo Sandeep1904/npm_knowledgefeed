@@ -41,7 +41,7 @@ class Fetcher {
     async search(query, query_type, start = 0) {
         if (query_type == "academic") {
             query = query.split(" ").join("+");
-            const url = `http://export.arxiv.org/api/query?search_query=${query}&start=${start}&max_results=4`;
+            const url = `http://export.arxiv.org/api/query?search_query=${query}&start=${start}&max_results=2`;
             try {
                 const response = await axios.get(url);
                 console.log("Academic search successfull!"); 
@@ -115,7 +115,7 @@ class Fetcher {
         let sources = [];
         let resources = [
             {
-                "images": images
+                "images": images.results
             }
         ];
         // if academic -> do arxiv and get list of urls. for each url get make md_str and append to allContent
@@ -470,24 +470,62 @@ class FeedBuilder {
 }
 
 class FeedModifier {
+    // return a copy of original feed. user can choose to replace.
 
-}
+    constructor() {
 
+    }
 
-async function main() {
-    const query = "Spectral Graph Theory";
-    const query_type = "academic";
-    const start = 0;
-    const feedBuilder = new FeedBuilder();
-    const generator = feedBuilder.buildFeed(query, query_type, start);
+    modify_agent(feed, objectID, model, source, temp, personality) {
+        console.log("Old agent: \n");
+        console.log(JSON.stringify(feed[objectID]?.agent)); // Using JSON.stringify for better output
 
-    // To get values from the generator
-    for await (const object of generator) {
-        console.log(object); // This will log each yielded object
+        // Create a deep copy of the feed
+        const copyfeed = JSON.parse(JSON.stringify(feed));
+
+        // Update the agent properties
+        if (copyfeed[objectID] && copyfeed[objectID].agent) {
+            copyfeed[objectID].agent = {
+                ...copyfeed[objectID].agent, // Spread existing properties to preserve them
+                model: model,
+                source: source,
+                temp: temp,
+                personality: personality,
+            };
+        } else {
+            console.warn(`Warning: objectID ${objectID} or agent not found in feed.`);
+            return feed; // Or handle this case differently, e.g., throw an error
+        }
+
+        console.log(`\nAfter modifying agent for objectID: ${objectID}\n`);
+        console.log(JSON.stringify(copyfeed[objectID]?.agent)); // Using JSON.stringify
+
+        return copyfeed;
+    }
+
+    modify_chatContext(feed, objectID, postID, newchatContext) {
+        console.log("\nOld chatContext: \n");
+        console.log(JSON.stringify(feed[objectID]?.posts?.[postID]?.chatContext)); // Using JSON.stringify and optional chaining
+
+        // Create a deep copy of the feed
+        const copyfeed = JSON.parse(JSON.stringify(feed));
+
+        // Update the chatContext
+        if (copyfeed[objectID] && copyfeed[objectID].posts && copyfeed[objectID].posts[postID]) {
+            copyfeed[objectID].posts[postID] = {
+                ...copyfeed[objectID].posts[postID], // Spread existing properties
+                chatContext: newchatContext,
+            };
+        } else {
+            console.warn(`Warning: objectID ${objectID}, postID ${postID}, or posts/chatContext not found in feed.`);
+            return feed; // Or handle this case differently
+        }
+
+        console.log(`\nAfter modifying chatContext for objectID: ${objectID}, postID: ${postID}\n`);
+        console.log(JSON.stringify(copyfeed[objectID]?.posts?.[postID]?.chatContext)); // Using JSON.stringify and optional chaining
+
+        return copyfeed;
     }
 }
 
-
-
-// Call the main function to execute
-main();
+module.exports = { FeedBuilder, FeedModifier }

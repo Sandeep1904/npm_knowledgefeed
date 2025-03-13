@@ -1,39 +1,15 @@
-const axios = require("axios");
-const pdf_parse = require("pdf-parse");
-const OpenAI = require("openai");
-require('dotenv').config();
-const groqClient = new OpenAI(
-    { 
-        apiKey: process.env.GROQ_API_KEY,
-        baseURL: "https://api.groq.com/openai/v1"
+const { FeedBuilder } = require('./index');
+
+async function consumeFeed() {
+    const query = "Attention is all you need";
+    const query_type = "academic";
+    const start = 0;
+    const feedBuilder = new FeedBuilder();
+    const generator = feedBuilder.buildFeed(query, query_type, start);
+
+    for await (const object of generator) {
+        console.log(object); // Process each yielded object
     }
-);
-
-async function fetchdata() {
-    let model = "llama-3.3-70b-versatile";
-    let temp = 0.7;
-    let results = "";
-    let prompt = "HI"
-    try {
-        results = await groqClient.chat.completions.create(
-            {
-                model:model,
-            temperature:temp,
-
-            messages:[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
-
-            }
-        );
-        results = String(results.choices[0].message.content);
-    } catch (error) {
-        console.log(`Groq Output Error ${error}`);
-    }
-    console.log(results);
 }
 
-fetchdata();
+consumeFeed();

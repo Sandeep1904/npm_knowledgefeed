@@ -1,6 +1,6 @@
 {
   "name": "knowledgefeed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a repository dedicated to curating knowledge on any topic related to your domain. This package takes in a topic of your interest and creates a feed of posts with caption-sized facts derived from latest research papers and news articles.",
   "main": "index.js",
   "scripts": {
