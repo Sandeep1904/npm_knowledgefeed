@@ -1,5 +1,5 @@
 require('dotenv').config();
-const fs = require('fs');
+// const fs = require('fs'); Creates compile errors in frontend use.
 const OpenAI = require("openai");
 const axios = require("axios");
 const pdf_parse = require("pdf-parse");
@@ -457,15 +457,15 @@ class FeedBuilder {
             yield objectResponse
         }
         
-        const fileName = 'output.json';
+        // const fileName = 'output.json';
 
-        fs.writeFile(fileName, JSON.stringify(feed, null, 4), (err) => {
-            if (err) {
-                console.error('Error writing to file', err);
-            } else {
-                console.log("Feed stored in JSON file");
-            }
-        });
+        // fs.writeFile(fileName, JSON.stringify(feed, null, 4), (err) => {
+        //     if (err) {
+        //         console.error('Error writing to file', err);
+        //     } else {
+        //         console.log("Feed stored in JSON file");
+        //     }
+        // });
     }
 }
 
