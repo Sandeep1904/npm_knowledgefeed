@@ -2,7 +2,6 @@ require('dotenv').config();
 // const fs = require('fs'); Creates compile errors in frontend use.
 const OpenAI = require("openai");
 const axios = require("axios");
-const pdf_parse = require("pdf-parse");
 const { convert } = require("html-to-text");
 const DDG = require('duck-duck-scrape');
 const xml2js = require('xml2js');
@@ -61,16 +60,39 @@ class Fetcher {
         
     }
 
+    async extractTextFromPdf(pdfData) {
+        const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf.mjs');
+          const loadingTask = pdfjsLib.getDocument({ data: pdfData });
+          const pdf = await loadingTask.promise;
+          let fullText = '';
+        
+          for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            const page = await pdf.getPage(pageNum);
+            const textContent = await page.getTextContent();
+            const pageText = textContent.items.map((item) => item.str).join(' ');
+            fullText += pageText + '\n';
+          }
+        
+          return fullText;
+        }
+
     async convertInput(input, type) {
         console.log(`Converting input: ${input}, type: ${type}`);
         let data = ""; // Initialize data outside of the try block
     
         try {
             if (type === "pdf") {
-                const response = await axios.get(input, { responseType: 'arraybuffer' }); // Corrected responseType
-                const inputData = response.data;
-                const pdfData = await pdf_parse(inputData);
-                data = pdfData.text;
+                console.log(`Fetching PDF from: ${input}`);
+                const response = await axios.get(input, {
+                responseType: 'arraybuffer',
+                });
+
+                console.log('PDF fetched successfully. Extracting text...');
+                const pdfData = new Uint8Array(response.data);
+                data = await this.extractTextFromPdf(pdfData);
+                console.log('PDF extraction successful...');
+
+
             } else if (type === "html") {
                 const response = await axios.get(input, {
                     headers: {
@@ -81,7 +103,7 @@ class Fetcher {
                 data = convert(htmlData); // Convert HTML to text
             } else {
                 console.warn(`Unsupported input type: ${type}`);
-                return ""; // Return empty string for unsupported types
+                
             }
     
             console.log("Conversion successful.");

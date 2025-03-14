@@ -1,7 +1,7 @@
 const { FeedBuilder } = require('./index');
 
 async function consumeFeed() {
-    const query = "Attention is all you need";
+    const query = "Cryptography vector space";
     const query_type = "academic";
     const start = 0;
     const feedBuilder = new FeedBuilder();
