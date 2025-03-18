@@ -363,35 +363,38 @@ class ObjectBuilder {
     }
 
     breakMarkdown(md_str, maxLength) {
-        // Initialize an empty array to hold the chunks
+
+        if (md_str.length === 0) {
+            return []; // Handle empty md_str
+        }
+    
         const chunks = [];
-        // Start from the beginning of the string
         let start = 0;
-        const percentage = 0.3;
     
-        // Loop until the end of the string
         while (start < md_str.length) {
-            // Get the end index for the current chunk
             let end = start + maxLength;
-    
-            // If the end index exceeds the string length, adjust it
             if (end > md_str.length) {
                 end = md_str.length;
             }
-    
-            // Append the chunk to the array
             chunks.push(md_str.slice(start, end));
-    
-            // Move the start index to the end of the current chunk
             start = end;
         }
     
         const remove = Math.floor(chunks.length * percentage);
-        if (chunks.length - remove > 2) {
+    
+        if (chunks.length > 3 && chunks.length - remove > 2) {
             const startIndex = remove;
             const endIndex = chunks.length - remove;
-            return chunks.slice(startIndex, endIndex);
+
+    
+            if (startIndex >= 0 && endIndex <= chunks.length && startIndex < endIndex) {
+                return chunks.slice(startIndex, endIndex);
+            } else {
+                console.error("Invalid startIndex or endIndex for slicing.");
+                return chunks;
+            }
         }
+    
         return chunks;
     }
 
@@ -465,7 +468,7 @@ class FeedBuilder {
         for (const content of allContent) {
             const abslink = content.abslink || null;
             const pdflink = content.pdflink || null;
-            const md_str = content.md_str || null;
+            const md_str = content.md_str || "";
             const resources = content.resources || null;
             const model = "llama-3.3-70b-versatile";
             const source = "groq";
