@@ -367,6 +367,7 @@ class ObjectBuilder {
         if (md_str.length === 0) {
             return []; // Handle empty md_str
         }
+        const percentage = 0.2
     
         const chunks = [];
         let start = 0;
